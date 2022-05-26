@@ -13,6 +13,17 @@ const getItems = async (): Promise<IProduct[]> => {
 
 function App() {
 	const { data, isLoading, error } = useQuery<IProduct[]>("Products", getItems);
+
+	const handleAddToBasket = () => {};
+	const handleRemoveFromBasket = () => {};
+
+	if (isLoading) {
+		return <div>Loading...</div>;
+	}
+	if (error) {
+		return <div>Something went wrong...</div>;
+	}
+
 	return <div className="App"></div>;
 }
 
