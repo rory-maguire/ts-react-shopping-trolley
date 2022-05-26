@@ -4,6 +4,8 @@ import { QueryClient, QueryClientProvider } from "react-query";
 
 import App from "./App";
 
+//create an instance of react query to help us handle fetching and using data in app
+//wrap the client provider around the app
 const client = new QueryClient();
 
 const root = ReactDOM.createRoot(
