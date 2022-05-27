@@ -1,4 +1,5 @@
 import React, { ReactElement } from "react";
+import { isTemplateExpression } from "typescript";
 import { IProduct } from "../Interfaces";
 import styles from "../Styles/ProductCard.module.css";
 
@@ -13,7 +14,7 @@ export const ProductCard: React.FC<IProps> = ({
 }) => {
 	return (
 		<div className={styles.container}>
-			<img className={styles.img}>{product.image}</img>
+			<img className={styles.img} src={product.image}></img>
 			<h2 className={styles.title}>{product.title}</h2>
 			<h2 className={styles.price}>{product.price}</h2>
 			<h5 className={styles.category}>{product.category}</h5>
