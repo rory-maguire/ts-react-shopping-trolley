@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useQuery } from "react-query";
+import { ProductCard } from "./Components/ProductCard";
 import { IProduct } from "./Interfaces";
 
 //the fetch call will return to us a promise of the IProduct shape
@@ -24,7 +25,18 @@ function App() {
 		return <div>Something went wrong...</div>;
 	}
 
-	return <div className="App"></div>;
+	return (
+		<div>
+			{data?.map((product) => (
+				<div key={product.id}>
+					<ProductCard
+						product={product}
+						handleAddToBasket={handleAddToBasket}
+					/>
+				</div>
+			))}
+		</div>
+	);
 }
 
 export default App;

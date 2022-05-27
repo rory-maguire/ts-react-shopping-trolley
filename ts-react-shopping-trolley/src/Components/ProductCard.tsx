@@ -18,7 +18,7 @@ export const ProductCard: React.FC<IProps> = ({
 			<h2 className={styles.price}>{product.price}</h2>
 			<h5 className={styles.category}>{product.category}</h5>
 			<p className={styles.description}>{product.description}</p>
-			<button onClick={() => handleAddToBasket}>Add to basket</button>
+			<button onClick={() => handleAddToBasket(product)}>Add to Basket</button>
 		</div>
 	);
 };
