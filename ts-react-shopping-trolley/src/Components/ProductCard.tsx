@@ -1,14 +1,24 @@
-import React from "react";
+import React, { ReactElement } from "react";
 import { IProduct } from "../Interfaces";
+import styles from "../Styles/ProductCard.module.css";
 
 interface IProps {
-	products: IProduct[];
+	product: IProduct;
 	handleAddToBasket: (product: IProduct) => void;
 }
 
 export const ProductCard: React.FC<IProps> = ({
-	products,
+	product,
 	handleAddToBasket,
 }) => {
-	return <div>ProductCard</div>;
+	return (
+		<div className={styles.container}>
+			<img className={styles.img}>{product.image}</img>
+			<h2 className={styles.title}>{product.title}</h2>
+			<h2 className={styles.price}>{product.price}</h2>
+			<h5 className={styles.category}>{product.category}</h5>
+			<p className={styles.description}>{product.description}</p>
+			<button onClick={() => handleAddToBasket}>Add to basket</button>
+		</div>
+	);
 };

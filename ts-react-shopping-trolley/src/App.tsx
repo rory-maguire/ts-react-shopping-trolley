@@ -1,4 +1,3 @@
-import "./App.css";
 import { useState } from "react";
 import { useQuery } from "react-query";
 import { IProduct } from "./Interfaces";
@@ -14,6 +13,7 @@ const getItems = async (): Promise<IProduct[]> => {
 function App() {
 	const { data, isLoading, error } = useQuery<IProduct[]>("Products", getItems);
 
+	console.log(data);
 	const handleAddToBasket = () => {};
 	const handleRemoveFromBasket = () => {};
 
