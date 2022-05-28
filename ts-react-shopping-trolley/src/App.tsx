@@ -3,7 +3,7 @@ import { useQuery } from "react-query";
 import { ProductCard } from "./Components/ProductCard";
 import { IProduct } from "./Interfaces";
 
-//the fetch call will return to us a promise of the IProduct shape
+//the fetch call will return to us a promise of the IProduct shape (array)
 
 const getItems = async (): Promise<IProduct[]> => {
 	const res = await fetch("https://fakestoreapi.com/products");
@@ -12,6 +12,7 @@ const getItems = async (): Promise<IProduct[]> => {
 };
 
 function App() {
+	const [basketItems, setBasketItems] = useState<IProduct[]>([]);
 	const { data, isLoading, error } = useQuery<IProduct[]>("Products", getItems);
 
 	console.log(data);
