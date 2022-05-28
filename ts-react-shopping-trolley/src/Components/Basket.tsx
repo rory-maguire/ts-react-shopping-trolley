@@ -1,7 +1,15 @@
-import React from "react";
+import { IProduct } from "../Interfaces/index";
 
-function Basket() {
-	return <div>Basket</div>;
+interface IProps {
+	basketItems: IProduct[];
+	handleAddToBasket: (product: IProduct) => void;
+	handleRemoveFromBasket: (id: number) => void;
 }
 
-export default Basket;
+export const Basket: React.FC<IProps> = ({
+	basketItems,
+	handleAddToBasket,
+	handleRemoveFromBasket,
+}) => {
+	return <div>Basket</div>;
+};
