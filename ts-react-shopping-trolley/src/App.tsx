@@ -35,7 +35,7 @@ function App() {
 	return (
 		<>
 			<nav>
-				<Link to="/basket">Basket</Link>
+				<Link to="/Basket">Basket</Link>
 			</nav>
 			<div>
 				{data?.map((product) => (
@@ -48,7 +48,7 @@ function App() {
 				))}
 				<Routes>
 					<Route
-						path="basket"
+						path="Basket"
 						element={
 							<Basket
 								basketItems={basketItems}
