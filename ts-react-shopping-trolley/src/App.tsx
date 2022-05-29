@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useQuery } from "react-query";
+import { Routes, Route, Link } from "react-router-dom";
 
 //components
 import { Basket } from "./Components/Basket";
@@ -32,21 +33,33 @@ function App() {
 	}
 
 	return (
-		<div>
-			{data?.map((product) => (
-				<div key={product.id}>
-					<Basket
-						basketItems={basketItems}
-						handleAddToBasket={handleAddToBasket}
-						handleRemoveFromBasket={handleRemoveFromBasket}
+		<>
+			<nav>
+				<Link to="/basket">Basket</Link>
+			</nav>
+			<div>
+				{data?.map((product) => (
+					<div key={product.id}>
+						<ProductCard
+							product={product}
+							handleAddToBasket={handleAddToBasket}
+						/>
+					</div>
+				))}
+				<Routes>
+					<Route
+						path="basket"
+						element={
+							<Basket
+								basketItems={basketItems}
+								handleAddToBasket={handleAddToBasket}
+								handleRemoveFromBasket={handleRemoveFromBasket}
+							/>
+						}
 					/>
-					<ProductCard
-						product={product}
-						handleAddToBasket={handleAddToBasket}
-					/>
-				</div>
-			))}
-		</div>
+				</Routes>
+			</div>
+		</>
 	);
 }
 

@@ -6,7 +6,6 @@ import styles from "../Styles/ProductCard.module.css";
 interface IProps {
 	product: IProduct;
 	handleAddToBasket: (product: IProduct) => void;
-	handleRemoveFromBasket: (id: number) => void;
 }
 
 export const ProductCard: React.FC<IProps> = ({
