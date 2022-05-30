@@ -1,5 +1,3 @@
-import React, { ReactElement } from "react";
-import { isTemplateExpression } from "typescript";
 import { IProduct } from "../Interfaces";
 import styles from "../Styles/ProductCard.module.css";
 

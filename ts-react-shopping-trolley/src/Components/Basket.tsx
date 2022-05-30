@@ -1,5 +1,4 @@
 import { IProduct } from "../Interfaces/index";
-import { Routes, Route, Link } from "react-router-dom";
 
 interface IProps {
 	basketItems: IProduct[];
@@ -12,9 +11,5 @@ export const Basket: React.FC<IProps> = ({
 	handleAddToBasket,
 	handleRemoveFromBasket,
 }) => {
-	return (
-		<div>
-			<Link to="/Home">Home</Link>
-		</div>
-	);
+	return <div>Hi</div>;
 };

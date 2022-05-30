@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { useQuery } from "react-query";
-import { Routes, Route, Link } from "react-router-dom";
 import Offcanvas from "react-bootstrap/Offcanvas";
+
+import styles from "./Styles/App.module.css";
 
 //components
 import { Basket } from "./Components/Basket";
@@ -37,7 +38,7 @@ function App() {
 
 	return (
 		<>
-			<div>
+			<div className={styles.container}>
 				{data?.map((product) => (
 					<div key={product.id}>
 						<ProductCard

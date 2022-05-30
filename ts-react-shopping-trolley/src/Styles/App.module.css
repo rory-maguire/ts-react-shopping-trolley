@@ -1,0 +1,9 @@
+.container {
+	background-color: grey;
+	display: grid;
+	max-width: 100vw;
+	align-items: center;
+	justify-content: center;
+	grid-template-columns: repeat(auto-fit, minmax(32rem, 1fr));
+	margin: auto;
+}
