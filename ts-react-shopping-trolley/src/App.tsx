@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useQuery } from "react-query";
 import { Routes, Route, Link } from "react-router-dom";
+import Offcanvas from "react-bootstrap/Offcanvas";
 
 //components
 import { Basket } from "./Components/Basket";
@@ -18,6 +19,8 @@ const getItems = async (): Promise<IProduct[]> => {
 };
 
 function App() {
+	const [basketShow, setBasketShow] = useState(false);
+
 	const [basketItems, setBasketItems] = useState<IProduct[]>([]);
 	const { data, isLoading, error } = useQuery<IProduct[]>("Products", getItems);
 
@@ -34,9 +37,6 @@ function App() {
 
 	return (
 		<>
-			<nav>
-				<Link to="/Basket">Basket</Link>
-			</nav>
 			<div>
 				{data?.map((product) => (
 					<div key={product.id}>
@@ -46,18 +46,24 @@ function App() {
 						/>
 					</div>
 				))}
-				<Routes>
-					<Route
-						path="Basket"
-						element={
-							<Basket
-								basketItems={basketItems}
-								handleAddToBasket={handleAddToBasket}
-								handleRemoveFromBasket={handleRemoveFromBasket}
-							/>
-						}
-					/>
-				</Routes>
+
+				<button onClick={() => setBasketShow(true)}>Open Basket</button>
+
+				<Offcanvas onHide={() => setBasketShow(false)}>
+					<Offcanvas.Header closeButton>
+						<Offcanvas.Title>Offcanvas</Offcanvas.Title>
+					</Offcanvas.Header>
+					<Offcanvas.Body>
+						Some text as placeholder. In real life you can have the elements you
+						have chosen. Like, text, images, lists, etc.
+					</Offcanvas.Body>
+				</Offcanvas>
+
+				<Basket
+					basketItems={basketItems}
+					handleAddToBasket={handleAddToBasket}
+					handleRemoveFromBasket={handleRemoveFromBasket}
+				/>
 			</div>
 		</>
 	);
