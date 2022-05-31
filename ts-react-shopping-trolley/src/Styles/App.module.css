@@ -1,9 +1,29 @@
-.container {
-	background-color: grey;
-	display: grid;
-	max-width: 100vw;
-	align-items: center;
-	justify-content: center;
-	grid-template-columns: repeat(auto-fit, minmax(32rem, 1fr));
-	margin: auto;
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Rubik", sans-serif;
+	color: var(--font);
+}
+
+:root {
+	--background: #eaefd3;
+	--font: #636363;
+	--card: #dcb8cb;
+}
+
+.main {
+	background-color: var(--background);
+	width: 100%;
+	min-height: 100vh;
+	border: 1px solid transparent;
+}
+
+.cardContainer {
+	background-color: #dcb8cb;
+	height: 60vh;
+	width: 25%;
+	padding: 1em;
+	margin: 1em;
+	border: 2px solid gray;
 }

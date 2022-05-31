@@ -38,9 +38,9 @@ function App() {
 
 	return (
 		<>
-			<div className={styles.container}>
+			<div className={styles.main}>
 				{data?.map((product) => (
-					<div key={product.id}>
+					<div key={product.id} className={styles.cardContainer}>
 						<ProductCard
 							product={product}
 							handleAddToBasket={handleAddToBasket}
@@ -48,7 +48,7 @@ function App() {
 					</div>
 				))}
 
-				<button onClick={() => setBasketShow(true)}>Open Basket</button>
+				{/* <button onClick={() => setBasketShow(true)}>Open Basket</button>
 
 				<Offcanvas onHide={() => setBasketShow(false)}>
 					<Offcanvas.Header closeButton>
@@ -64,7 +64,7 @@ function App() {
 					basketItems={basketItems}
 					handleAddToBasket={handleAddToBasket}
 					handleRemoveFromBasket={handleRemoveFromBasket}
-				/>
+				/> */}
 			</div>
 		</>
 	);
