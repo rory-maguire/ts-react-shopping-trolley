@@ -12,14 +12,18 @@ export const ProductCard: React.FC<IProps> = ({
 }) => {
 	return (
 		<div className={styles.container}>
-			{/* <div className={styles.img}>
-				<img src={product.image}></img>
-			</div> */}
-			<h2 className={styles.title}>{product.title}</h2>
-			<h2 className={styles.price}>£{product.price}</h2>
-			<h3 className={styles.category}>{product.category}</h3>
-			<p className={styles.description}>{product.description}</p>
-			<button onClick={() => handleAddToBasket(product)}>Add to Basket</button>
+			<div className={styles.cardUpper}>
+				<img src={product.image} className={styles.img}></img>
+			</div>
+			<div className={styles.cardLower}>
+				<h2 className={styles.title}>{product.title}</h2>
+				<h2 className={styles.price}>£{product.price}</h2>
+				<h3 className={styles.category}>{product.category}</h3>
+				<p className={styles.description}>{product.description}</p>
+				<button onClick={() => handleAddToBasket(product)}>
+					Add to Basket
+				</button>
+			</div>
 		</div>
 	);
 };
