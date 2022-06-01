@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useQuery } from "react-query";
 import Offcanvas from "react-bootstrap/Offcanvas";
+import Navbar from "./Components/Navbar";
 
 import styles from "./Styles/App.module.css";
 
@@ -29,6 +30,8 @@ function App() {
 	const handleAddToBasket = () => {};
 	const handleRemoveFromBasket = () => {};
 
+	const handleShowBasket = () => {};
+
 	if (isLoading) {
 		return <div>Loading...</div>;
 	}
@@ -39,6 +42,8 @@ function App() {
 	return (
 		<>
 			<div className={styles.main}>
+				<Navbar handleShowBasket={handleShowBasket} />
+
 				{data?.map((product) => (
 					<div key={product.id} className={styles.cardContainer}>
 						<ProductCard

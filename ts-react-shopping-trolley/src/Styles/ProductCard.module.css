@@ -21,3 +21,12 @@
 	height: 70%;
 	border: 2px solid green;
 }
+
+.description {
+	margin-top: 0.5em;
+	overflow: hidden;
+	line-height: 1.5em;
+	display: -webkit-box;
+	-webkit-line-clamp: 5;
+	-webkit-box-orient: vertical;
+}
