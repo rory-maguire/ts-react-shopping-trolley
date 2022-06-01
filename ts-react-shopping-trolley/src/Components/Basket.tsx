@@ -11,10 +11,5 @@ export const Basket: React.FC<IProps> = ({
 	handleAddToBasket,
 	handleRemoveFromBasket,
 }) => {
-	return (
-		<div>
-			<button onClick={handleAddToBasket}></button>
-			<button onClick={handleRemoveFromBasket}></button>
-		</div>
-	);
+	return <div></div>;
 };

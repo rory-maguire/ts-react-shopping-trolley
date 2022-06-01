@@ -26,8 +26,8 @@ function App() {
 	const { data, isLoading, error } = useQuery<IProduct[]>("Products", getItems);
 
 	console.log(data);
-	const handleAddToBasket = () => {};
-	const handleRemoveFromBasket = () => {};
+	const handleAddToBasket = (item: IProduct) => null;
+	const handleRemoveFromBasket = () => null;
 
 	if (isLoading) {
 		return <div>Loading...</div>;

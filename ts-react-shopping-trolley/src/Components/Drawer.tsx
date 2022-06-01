@@ -10,7 +10,11 @@ interface IProps {
 	handleRemoveFromBasket: (id: number) => void;
 }
 
-function Drawer({ basketItems }) {
+const Drawer: React.FC<IProps> = ({
+	basketItems,
+	handleRemoveFromBasket,
+	handleAddToBasket,
+}) => {
 	const [basketShow, setBasketShow] = useState(false);
 
 	return (
@@ -30,6 +34,6 @@ function Drawer({ basketItems }) {
 			</Offcanvas>
 		</div>
 	);
-}
+};
 
 export default Drawer;

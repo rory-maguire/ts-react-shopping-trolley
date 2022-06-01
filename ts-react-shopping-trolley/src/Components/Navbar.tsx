@@ -8,7 +8,11 @@ interface IProps {
 	handleAddToBasket: (product: IProduct) => void;
 	handleRemoveFromBasket: (id: number) => void;
 }
-const Navbar: React.FC<IProps> = ({ basketItems }) => {
+const Navbar: React.FC<IProps> = ({
+	basketItems,
+	handleAddToBasket,
+	handleRemoveFromBasket,
+}) => {
 	return (
 		<div className={styles.navbarContainer}>
 			<h1 className={styles.title}>Typesafesbury's</h1>
