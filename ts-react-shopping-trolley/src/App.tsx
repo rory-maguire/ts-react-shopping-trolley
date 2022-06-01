@@ -1,14 +1,11 @@
 import { useState } from "react";
 import { useQuery } from "react-query";
 
-import Navbar from "./Components/Navbar";
-import Drawer from "./Components/Drawer";
-
 import styles from "./Styles/App.module.css";
 
 //components
-import { Basket } from "./Components/Basket";
 import { ProductCard } from "./Components/ProductCard";
+import Navbar from "./Components/Navbar";
 
 //interfaces
 import { IProduct } from "./Interfaces";

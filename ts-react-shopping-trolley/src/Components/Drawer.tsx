@@ -1,8 +1,13 @@
 import React from "react";
 import { useState } from "react";
-import Offcanvas from "react-bootstrap/Offcanvas";
+
+//components
 import { Basket } from "./Basket";
+
+//interfaces
 import { IProduct } from "../Interfaces/index";
+
+import Offcanvas from "react-bootstrap/Offcanvas";
 
 interface IProps {
 	basketItems: IProduct[];
@@ -15,14 +20,20 @@ const Drawer: React.FC<IProps> = ({
 	handleRemoveFromBasket,
 	handleAddToBasket,
 }) => {
-	const [basketShow, setBasketShow] = useState(false);
+	const [show, setShow] = useState(false);
+	const handleShow = () => {
+		setShow(true);
+	};
+	const handleClose = () => {
+		setShow(false);
+	};
 
 	return (
 		<div>
-			<button onClick={() => setBasketShow(true)}>Open</button>
-			<Offcanvas show={basketShow} onHide={() => setBasketShow(false)}>
+			<button onClick={handleShow}>Open</button>
+			<Offcanvas show={show} onHide={handleClose}>
 				<Offcanvas.Header closeButton>
-					<Offcanvas.Title>Offcanvas</Offcanvas.Title>
+					<Offcanvas.Title>Basket</Offcanvas.Title>
 				</Offcanvas.Header>
 				<Offcanvas.Body>
 					<Basket
