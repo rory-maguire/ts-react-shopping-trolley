@@ -22,9 +22,13 @@ function App() {
 	const [basketItems, setBasketItems] = useState<IProduct[]>([]);
 	const { data, isLoading, error } = useQuery<IProduct[]>("Products", getItems);
 
-	console.log(data);
 	const handleAddToBasket = (item: IProduct) => null;
 	const handleRemoveFromBasket = () => null;
+
+	//iterate through the selected items and find total cost
+	const totalBasketPrice = (items: IProduct[]): number => {
+		return items.reduce((prev: number, item) => prev + item.price, 0);
+	};
 
 	if (isLoading) {
 		return <div>Loading...</div>;
