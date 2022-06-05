@@ -1,5 +1,5 @@
 import { IProduct } from "../Interfaces/index";
-import { ProductCard } from "./ProductCard";
+import BasketItem from "../Components/BasketItem";
 
 interface IProps {
 	basketItems: IProduct[];
@@ -18,8 +18,9 @@ export const Basket: React.FC<IProps> = ({
 				{basketItems.length === 0 ? <p>Basket is empty...</p> : null}
 				{basketItems.map((product) => {
 					return (
-						<ProductCard
+						<BasketItem
 							product={product}
+							handleRemoveFromBasket={handleRemoveFromBasket}
 							handleAddToBasket={handleAddToBasket}
 							key={product.id}
 						/>
