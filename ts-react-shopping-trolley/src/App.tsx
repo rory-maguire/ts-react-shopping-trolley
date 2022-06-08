@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { useQuery } from "react-query";
-
-import styles from "./Styles/App.module.css";
+import "./index.css";
 
 //components
 import { ProductCard } from "./Components/ProductCard";
@@ -38,15 +37,16 @@ function App() {
 	}
 
 	return (
-		<>
+		<div className="flex">
+			<h1 className="text-3xl font-bold underline">hello world</h1>
 			<Navbar
 				basketItems={basketItems}
 				handleAddToBasket={handleAddToBasket}
 				handleRemoveFromBasket={handleRemoveFromBasket}
 			/>
-			<div className={styles.main}>
+			<div>
 				{data?.map((product) => (
-					<div key={product.id} className={styles.cardContainer}>
+					<div key={product.id}>
 						<ProductCard
 							product={product}
 							handleAddToBasket={handleAddToBasket}
@@ -54,7 +54,7 @@ function App() {
 					</div>
 				))}
 			</div>
-		</>
+		</div>
 	);
 }
 

@@ -1,5 +1,4 @@
 import React from "react";
-import styles from "../Styles/Navbar.module.css";
 import Drawer from "../Components/Drawer";
 import { IProduct } from "../Interfaces";
 
@@ -14,8 +13,8 @@ const Navbar: React.FC<IProps> = ({
 	handleRemoveFromBasket,
 }) => {
 	return (
-		<div className={styles.navbarContainer}>
-			<h1 className={styles.title}>Typesafesbury's</h1>
+		<div>
+			<h1 className="text-emerald-500">Typesafesbury's</h1>
 			<Drawer
 				basketItems={basketItems}
 				handleAddToBasket={handleAddToBasket}
