@@ -10,9 +10,9 @@ export const ProductCard: React.FC<IProps> = ({
 	handleAddToBasket,
 }) => {
 	return (
-		<div className="text-green-600">
-			<div>
-				<img src={product.image}></img>
+		<div className="w-80 m-8 my-10 bg-red-400">
+			<div className="max-h-75 w-fit p-8 border-8">
+				<img className="rounded-lg" src={product.image}></img>
 			</div>
 			<div>
 				<h2>{product.title}</h2>

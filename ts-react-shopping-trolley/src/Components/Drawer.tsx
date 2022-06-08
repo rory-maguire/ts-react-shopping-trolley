@@ -30,7 +30,9 @@ const Drawer: React.FC<IProps> = ({
 
 	return (
 		<div>
-			<button onClick={handleShow}>Open</button>
+			<button className="text-white" onClick={handleShow}>
+				Open
+			</button>
 			<Offcanvas show={show} onHide={handleClose}>
 				<Offcanvas.Header closeButton>
 					<Offcanvas.Title>Basket</Offcanvas.Title>

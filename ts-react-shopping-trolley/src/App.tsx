@@ -37,21 +37,19 @@ function App() {
 	}
 
 	return (
-		<div className="flex">
-			<h1 className="text-3xl font-bold underline">hello world</h1>
+		<div className="flex bg-slate-500">
 			<Navbar
 				basketItems={basketItems}
 				handleAddToBasket={handleAddToBasket}
 				handleRemoveFromBasket={handleRemoveFromBasket}
 			/>
-			<div>
+			<div className="grid-cols-3">
 				{data?.map((product) => (
-					<div key={product.id}>
-						<ProductCard
-							product={product}
-							handleAddToBasket={handleAddToBasket}
-						/>
-					</div>
+					<ProductCard
+						key={product.id}
+						product={product}
+						handleAddToBasket={handleAddToBasket}
+					/>
 				))}
 			</div>
 		</div>
